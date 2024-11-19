@@ -1,7 +1,7 @@
 # Load environment variables
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 # The dotenv package is used to load environment variables from a .env file
 # into the environment for this script. This is useful for keeping secrets out of source code.
@@ -41,4 +41,5 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 30))
 # ADMIN_USER and ADMIN_PASSWORD are placeholder credentials for basic authentication
 # in this example. In production, use a more secure authentication method.
 ADMIN_USER = os.getenv('ADMIN_USER', 'admin')
-ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'ecret')
+ADMIN_PASSWORD = os.getenv('ADMIN_PASSWORD', 'secret')
+
