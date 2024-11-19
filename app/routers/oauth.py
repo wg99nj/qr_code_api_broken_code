@@ -1,6 +1,6 @@
 # Import necessary modules and functions from FastAPI and the standard library
-from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi import APIRouter, Depends, HTTPException, status # type: ignore
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm # type: ignore
 from datetime import timedelta
 from app.config import ACCESS_TOKEN_EXPIRE_MINUTES  # Custom configuration setting
 from app.schema import Token  # Import the Token model from our application
@@ -15,7 +15,7 @@ router = APIRouter()
 
 # Define an endpoint for the login that issues access tokens
 # This endpoint will respond to POST requests at "/token" and returns data matching the Token model
-@router.post("/tokn", response_model=Token)
+@router.post("/token", response_model=Token)
 async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     # Try to authenticate the user with the provided username and password
     user = authenticate_user(form_data.username, form_data.password)
